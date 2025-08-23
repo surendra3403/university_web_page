@@ -5,6 +5,7 @@ import { FaBars, FaWindowClose, FaFacebook, FaTwitter, FaInstagram, FaLinkedin, 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
+  const [showInfoModal, setShowInfoModal] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     mobile: '',
@@ -88,7 +89,7 @@ Submitted on: ${new Date().toLocaleString()}`;
             Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
             Tenetur nesciunt perspiciatis illum eos, similique non.
           </p>
-          <a href="#" className="mainPage-button">Visit to know more</a>
+          <a href="#" className="mainPage-button" onClick={(e) => { e.preventDefault(); setShowInfoModal(true); }}>Visit to know more</a>
         </div>
       </section>
 
@@ -254,6 +255,30 @@ Submitted on: ${new Date().toLocaleString()}`;
               
               <button type="submit" className="submit-btn">Submit</button>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Info Modal */}
+      {showInfoModal && (
+        <div className="modal-overlay">
+          <div className="modal info-modal">
+            <div className="modal-header">
+              <h2>Information</h2>
+              <FaTimes 
+                className="close-btn" 
+                onClick={() => setShowInfoModal(false)}
+              />
+            </div>
+            <div className="info-content">
+              <p>This information needs to be added.</p>
+              <button 
+                className="submit-btn" 
+                onClick={() => setShowInfoModal(false)}
+              >
+                OK
+              </button>
+            </div>
           </div>
         </div>
       )}

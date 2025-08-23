@@ -433,8 +433,30 @@ h3 {
   transition: background 0.3s;
 }
 
-.submit-btn:hover {
-  background: #d32f2f;
+  .submit-btn:hover {
+    background: #d32f2f;
+  }
+
+/* Info Modal Styles */
+.info-modal {
+  max-width: 400px;
+  text-align: center;
+}
+
+.info-content {
+  padding: 20px 0;
+}
+
+.info-content p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.info-modal .submit-btn {
+  margin: 0 auto;
+  min-width: 100px;
 }
 
 /* Mobile Optimization for Modal */
